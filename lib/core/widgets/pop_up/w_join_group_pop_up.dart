@@ -1,6 +1,5 @@
 // import 'package:flutter/material.dart';
-// import 'package:flutter_screenutil/flutter_screenutil.dart';
-// import 'package:momo/core/constants/colors.dart';
+// // import 'package:momo/core/constants/colors.dart';
 // import 'package:momo/core/constants/default_values.dart';
 // import 'package:momo/core/constants/dimension_theme.dart';
 // import 'package:momo/core/extensions/ex_build_context.dart';
@@ -27,8 +26,8 @@
 //       child: WContainer(
 //         verticalPadding: 0,
 //         horizontalPadding: 0,
-//         height: 537.h,
-//         width: 320.w,
+//         height: 537,
+//         width: 320,
 //         child: ClipRRect(
 //           borderRadius: BorderRadius.circular(PTheme.borderRadius),
 //           child: Column(
@@ -106,16 +105,16 @@
 //                           });
 //                         },
 //                         child: Row(
-//                           spacing: 10.w,
+//                           spacing: 10,
 //                           mainAxisAlignment: MainAxisAlignment.start,
 //                           crossAxisAlignment: CrossAxisAlignment.start,
 //                           children: [
-//                             WCustomcheckBox(scale: 1.sp, value: isChecked),
+//                             WCustomcheckBox(scale: 1, value: isChecked),
 //                             Expanded(
 //                               child: Text(
 //                                 "I Confirm that I have joined the community group.",
 //                                 style: context.primaryTextSmall?.copyWith(
-//                                   fontSize: 10.sp,
+//                                   fontSize: 10,
 //                                   color: Colors.blue,
 //                                 ),
 //                               ),

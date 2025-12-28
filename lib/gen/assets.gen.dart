@@ -46,6 +46,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/after_before.svg
   String get afterBefore => 'assets/icons/after_before.svg';
 
+  /// Directory path: assets/icons/bottom_nav
+  $AssetsIconsBottomNavGen get bottomNav => const $AssetsIconsBottomNavGen();
+
   /// File path: assets/icons/clear.svg
   String get clear => 'assets/icons/clear.svg';
 
@@ -94,8 +97,14 @@ class $AssetsIconsGen {
   /// File path: assets/icons/trams_of_use.svg
   String get tramsOfUse => 'assets/icons/trams_of_use.svg';
 
+  /// File path: assets/icons/unwished.svg
+  String get unwished => 'assets/icons/unwished.svg';
+
   /// File path: assets/icons/vault.svg
   String get vault => 'assets/icons/vault.svg';
+
+  /// File path: assets/icons/wished.svg
+  String get wished => 'assets/icons/wished.svg';
 
   /// List of all assets
   List<dynamic> get values => [
@@ -118,7 +127,9 @@ class $AssetsIconsGen {
     stopwatch,
     taskChecklist,
     tramsOfUse,
+    unwished,
     vault,
+    wished,
   ];
 }
 
@@ -278,6 +289,28 @@ class $AssetsSocialGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [fb, insta, save, tktok, ws];
+}
+
+class $AssetsIconsBottomNavGen {
+  const $AssetsIconsBottomNavGen();
+
+  /// File path: assets/icons/bottom_nav/card.svg
+  String get card => 'assets/icons/bottom_nav/card.svg';
+
+  /// File path: assets/icons/bottom_nav/categories.svg
+  String get categories => 'assets/icons/bottom_nav/categories.svg';
+
+  /// File path: assets/icons/bottom_nav/hoome.svg
+  String get hoome => 'assets/icons/bottom_nav/hoome.svg';
+
+  /// File path: assets/icons/bottom_nav/menu.svg
+  String get menu => 'assets/icons/bottom_nav/menu.svg';
+
+  /// File path: assets/icons/bottom_nav/stores.svg
+  String get stores => 'assets/icons/bottom_nav/stores.svg';
+
+  /// List of all assets
+  List<String> get values => [card, categories, hoome, menu, stores];
 }
 
 class $AssetsImagesBadGen {

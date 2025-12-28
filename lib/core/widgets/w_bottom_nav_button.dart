@@ -1,7 +1,6 @@
 import 'package:e_commarce_site/core/constants/dimension_theme.dart';
 import 'package:e_commarce_site/core/extensions/ex_build_context.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class WBottomNavButton extends StatelessWidget {
   final String label;
@@ -27,7 +26,7 @@ class WBottomNavButton extends StatelessWidget {
         }
       },
       child: Container(
-        height: 60.h,
+        height: 60,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(PTheme.borderRadius),
           color: isEnabled

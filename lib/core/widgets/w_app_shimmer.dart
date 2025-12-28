@@ -1,7 +1,6 @@
 import '/core/extensions/ex_build_context.dart';
 import '/core/extensions/ex_padding.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '/core/widgets/w_container.dart';
 import '/core/widgets/w_shimmer.dart';
 
@@ -12,26 +11,27 @@ class WAppsShimmer extends StatelessWidget {
   Widget build(BuildContext context) {
     return WContainer(
       borderColor: Colors.transparent,
-      borderRadius: 12.r,
+      borderRadius: 12,
       boxShadow: [
         BoxShadow(
           blurRadius: 12,
           spreadRadius: 0,
           offset: const Offset(1, 2),
-          color:  (context.textTheme?.titleMedium?.color??Colors.black).withValues(alpha: 0.08),
+          color: (context.textTheme?.titleMedium?.color ?? Colors.black)
+              .withValues(alpha: 0.08),
         ),
       ],
       child: Row(
         children: [
           // Left shimmer image
           ClipRRect(
-            borderRadius: BorderRadius.circular(6.r),
+            borderRadius: BorderRadius.circular(6),
             child: Shimmer.fromColors(
               baseColor: Colors.grey.shade300,
               highlightColor: Colors.grey.shade100,
               child: Container(
-                height: 48.h,
-                width: 48.w,
+                height: 48,
+                width: 48,
                 color: Colors.grey.shade300,
               ),
             ),
@@ -45,8 +45,8 @@ class WAppsShimmer extends StatelessWidget {
                 baseColor: Colors.grey.shade300,
                 highlightColor: Colors.grey.shade100,
                 child: Container(
-                  height: 12.h,
-                  width: 100.w,
+                  height: 12,
+                  width: 100,
                   color: Colors.grey.shade300,
                 ),
               ).pB(value: 6),
@@ -54,8 +54,8 @@ class WAppsShimmer extends StatelessWidget {
                 baseColor: Colors.grey.shade300,
                 highlightColor: Colors.grey.shade100,
                 child: Container(
-                  height: 10.h,
-                  width: 60.w,
+                  height: 10,
+                  width: 60,
                   color: Colors.grey.shade300,
                 ),
               ),

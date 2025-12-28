@@ -2,7 +2,6 @@ import 'package:e_commarce_site/core/constants/colors.dart';
 import 'package:e_commarce_site/core/constants/dimension_theme.dart';
 import 'package:e_commarce_site/core/extensions/ex_build_context.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 /// 📦 WContainer
 /// A flexible, tappable container with customizable padding, border, color, and shape.
@@ -63,7 +62,7 @@ class WContainer extends StatelessWidget {
                           .border!
                           .borderSide
                           .color,
-                  width: 1.w,
+                  width: 1,
                   // strokeAlign: BorderSide.strokeAlignOutside,
                 ),
 

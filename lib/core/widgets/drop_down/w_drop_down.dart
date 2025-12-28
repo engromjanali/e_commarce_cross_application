@@ -5,8 +5,7 @@
 // import 'package:e_commarce_site/core/widgets/w_dialog.dart';
 // import 'package:e_commarce_site/core/widgets/w_text_field.dart';
 // import 'package:flutter/material.dart';
-// import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+//
 // class WDropdown<T> extends FormField<T> {
 //   WDropdown({
 //     super.key,
@@ -124,7 +123,7 @@
 //                 ).pB(),
 //                 SizedBox(
 //                   width: double.maxFinite,
-//                   height: 200.h,
+//                   height: 200,
 //                   child: ListView.builder(
 //                     shrinkWrap: true,
 //                     padding: EdgeInsets.zero,
@@ -179,7 +178,7 @@
 //         ).pB(value: 5),
 //         WContainer(
 //           onTap: openSearchDialog,
-//           verticalPadding: PTheme.spaceY + 2.h,
+//           verticalPadding: PTheme.spaceY + 2,
 //           borderColor: hasError ? Colors.red : Colors.grey.withAlpha(120),
 //           child: Row(
 //             children: [
@@ -193,7 +192,7 @@
 //                     color: selectedItem != null
 //                         ? context.textTheme?.titleMedium!.color
 //                         : context.textTheme?.titleMedium!.color,
-//                     fontSize: selectedItem != null ? 14.sp : 12.sp,
+//                     fontSize: selectedItem != null ? 14.sp : 12,
 //                   ),
 //                 ),
 //               ),
@@ -203,12 +202,12 @@
 //         ),
 //         if (hasError)
 //           Padding(
-//             padding: EdgeInsets.only(top: 5.h, left: 10.w),
+//             padding: EdgeInsets.only(top: 5, left: 10),
 //             child: Text(
 //               errorText!,
 //               style: context.textTheme?.bodyMedium?.copyWith(
 //                 color: context.redColor,
-//                 fontSize: 12.sp,
+//                 fontSize: 12,
 //                 fontWeight: FontWeight.w400,
 //               ),
 //             ),

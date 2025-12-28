@@ -97,4 +97,5 @@ flutter:
     - assets/icons/
     - assets/fonts/
     - assets/logo/
+    - assets/icons/bottom_nav/
     - assets/social/

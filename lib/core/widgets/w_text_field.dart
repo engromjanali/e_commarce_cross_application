@@ -3,7 +3,6 @@ import 'package:e_commarce_site/core/extensions/ex_build_context.dart';
 import 'package:e_commarce_site/core/extensions/ex_expanded.dart';
 import 'package:e_commarce_site/core/extensions/ex_padding.dart';
 import 'package:e_commarce_site/core/functions/f_is_null.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -200,21 +199,21 @@ class _WTextFieldState extends State<WTextField> {
       textInputAction: widget.textInputAction,
       style: context.textTheme?.titleLarge?.copyWith(
         fontWeight: FontWeight.w400,
-        fontSize: 14.sp,
+        fontSize: 14,
       ),
       decoration: InputDecoration(
         filled: true,
         fillColor: context.fillColor,
-        prefixIconConstraints: BoxConstraints(maxHeight: 17.w),
+        prefixIconConstraints: BoxConstraints(maxHeight: 17),
         errorStyle: context.textTheme?.labelSmall?.copyWith(
           color: context.redColor,
-          fontSize: 12.sp,
+          fontSize: 12,
           fontWeight: FontWeight.w400,
         ),
         border: InputBorder.none,
         contentPadding: EdgeInsets.symmetric(
-          vertical: 10.h,
-          horizontal: widget.prefixIconPath == null ? 10.w : 0.0,
+          vertical: 10,
+          horizontal: widget.prefixIconPath == null ? 10 : 0.0,
         ),
         hintText:
             widget.hintText ??
@@ -227,8 +226,8 @@ class _WTextFieldState extends State<WTextField> {
                 padding: EdgeInsets.symmetric(horizontal: PTheme.paddingX - 5),
                 child: SvgPicture.asset(
                   widget.prefixIconPath!,
-                  height: 20.w,
-                  width: 20.w,
+                  height: 20,
+                  width: 20,
                   colorFilter: ColorFilter.mode(
                     context.primaryTextColor!,
                     BlendMode.srcIn,

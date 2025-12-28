@@ -1,5 +1,4 @@
 import 'package:e_commarce_site/gen/assets.gen.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -8,6 +7,6 @@ class WNoDataFound extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SvgPicture.asset(Assets.logo.emptyData, height: 300.h);
+    return SvgPicture.asset(Assets.logo.emptyData, height: 300);
   }
 }

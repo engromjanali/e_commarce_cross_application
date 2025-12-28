@@ -1,7 +1,6 @@
 import 'package:e_commarce_site/core/extensions/ex_build_context.dart';
 import 'package:e_commarce_site/core/extensions/ex_padding.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 /// 🧾 WFormFieldWrapper
 /// Wraps a form field with:
@@ -47,7 +46,7 @@ class WFormFieldWrapper extends StatelessWidget {
             "$title is $errorText",
             style: context.textTheme?.labelMedium?.copyWith(
               color: context.redColor,
-              fontSize: 12.sp,
+              fontSize: 12,
             ),
           ).pV(value: 3),
       ],

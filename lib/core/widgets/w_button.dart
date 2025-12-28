@@ -1,7 +1,6 @@
 import '/./core/constants/dimension_theme.dart';
 import '/./core/extensions/ex_build_context.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 /// 🚀 WPrimaryButton
@@ -187,10 +186,10 @@ class _WPrimaryButtonState extends State<WPrimaryButton>
                         duration: const Duration(milliseconds: 300),
                         child: widget.isLoading
                             ? SizedBox(
-                                height: 24.h,
-                                width: 24.w,
+                                height: 24,
+                                width: 24,
                                 child: CircularProgressIndicator(
-                                  strokeWidth: 2.5.w,
+                                  strokeWidth: 2.5,
                                   valueColor: AlwaysStoppedAnimation<Color>(
                                     context.indicatorColor!,
                                   ),
@@ -206,7 +205,7 @@ class _WPrimaryButtonState extends State<WPrimaryButton>
                                     if (widget.iconSVG != null)
                                       SvgPicture.asset(
                                         widget.iconSVG ?? "",
-                                        height: 24.h,
+                                        height: 24,
                                       ),
                                     if (widget.iconSVG != null &&
                                         widget.text != null)
@@ -217,7 +216,7 @@ class _WPrimaryButtonState extends State<WPrimaryButton>
                                         key: ValueKey(widget.text),
                                         style: TextStyle(
                                           color: textColor,
-                                          fontSize: 14.sp,
+                                          fontSize: 14,
                                           fontWeight: FontWeight.w500,
                                         ),
                                       ),

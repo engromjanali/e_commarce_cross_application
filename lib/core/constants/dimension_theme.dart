@@ -1,5 +1,3 @@
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 /// 📐 PTheme
 /// Provides common spacing, padding, and sizing values to maintain
 /// consistent UI layout throughout the app.
@@ -8,14 +6,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 /// - Button height, image dimensions
 /// - Default border radius
 class PTheme {
-  static double paddingX = 16.w;
-  static double paddingY = 16.h;
-  static double spaceX = 8.w;
-  static double spaceY = 8.h;
-  static double spaceLY = 20.h;
-  static double buttonHeight = 46.h;
-  static double borderRadius = 8.r;
-  static double buttonborderRadius = 36.r;
-  static double imageDefaultY = 40.h;
-  static double imageDefaultX = 40.w;
+  static double paddingX = 16;
+  static double paddingY = 16;
+  static double spaceX = 8;
+  static double spaceY = 8;
+  static double spaceLY = 20;
+  static double buttonHeight = 46;
+  static double borderRadius = 8;
+  static double buttonborderRadius = 36;
+  static double imageDefaultY = 40;
+  static double imageDefaultX = 40;
 }

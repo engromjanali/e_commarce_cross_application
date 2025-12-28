@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_utils/src/extensions/context_extensions.dart';
 
 /// 🎨 PColors
 /// A central place for managing all theme-related colors in the project.
@@ -21,9 +22,13 @@ class PColors {
   static const nevColorLight = Color(0XFFFFFFFF);
   static const nevColorDark = Color(0xFF000000);
 
-  // Primary Light
-  static const lightColorLight = Color(0XFFE9F3FF);
-  static const lightColorDark = Color(0XFFE9F3FF);
+  // Light Color
+  static const lightColorLight = Color(0xFFE9F3FF);
+  static const lightColorDark = Color(0x1AE9F3FF);
+  Color lightColor(BuildContext context) =>
+      context.theme.brightness == Brightness.dark
+      ? lightColorDark
+      : lightColorLight;
 
   // card color
   static const cardColorLight = Color(0XFFFFFFFF);
@@ -31,7 +36,7 @@ class PColors {
 
   // Cancel/Negative/discount tag/ wishlist
   static const taqColorLight = Color(0XFFFF5555);
-  static const taqColorDark = Color(0xFF121214);
+  static const taqColorDark = Color(0xFFFF5555);
 
   // cancle/Negitive background
   static const taqBackgroundColorLight = Color(0XFFFFF4F3);

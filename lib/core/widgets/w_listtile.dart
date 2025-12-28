@@ -8,7 +8,6 @@ import 'package:e_commarce_site/core/extensions/ex_padding.dart';
 import 'package:e_commarce_site/core/extensions/ex_strings.dart';
 import 'package:e_commarce_site/core/widgets/w_container.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class WListTile extends StatelessWidget {
   final Color? leadingColor;
@@ -52,7 +51,7 @@ class WListTile extends StatelessWidget {
             child: Row(
               children: [
                 Container(
-                  width: 10.w,
+                  width: 10,
                   color: leadingColor ?? PColors.primaryButtonColorLight,
                 ),
                 Expanded(
@@ -127,7 +126,7 @@ class WListTile extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 // mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(Icons.edit, size: 20.w, color: Color(0xFF0088FF)),
+                  Icon(Icons.edit, size: 20, color: Color(0xFF0088FF)),
                   Text('Edit', textAlign: TextAlign.center).expd(),
                 ],
               ),
@@ -150,7 +149,7 @@ class WListTile extends StatelessWidget {
                   spacing: PTheme.spaceX,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(Icons.move_down, size: 20.w, color: Colors.green),
+                    Icon(Icons.move_down, size: 20, color: Colors.green),
                     Text('Keep In Vault', textAlign: TextAlign.center).expd(),
                   ],
                 ),
@@ -172,7 +171,7 @@ class WListTile extends StatelessWidget {
                   spacing: PTheme.spaceX,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(Icons.move_down, size: 20.w, color: Colors.green),
+                    Icon(Icons.move_down, size: 20, color: Colors.green),
                     Text('Put Back', textAlign: TextAlign.center).expd(),
                   ],
                 ),
@@ -194,7 +193,7 @@ class WListTile extends StatelessWidget {
                 spacing: PTheme.spaceX,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(Icons.delete, size: 20.w, color: Colors.black),
+                  Icon(Icons.delete, size: 20, color: Colors.black),
                   Text('Delete', textAlign: TextAlign.center).expd(),
                 ],
               ),

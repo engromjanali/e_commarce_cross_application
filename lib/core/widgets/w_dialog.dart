@@ -7,8 +7,7 @@
 // import 'package:e_commarce_site/core/widgets/w_close_button.dart';
 // import 'package:e_commarce_site/gen/assets.gen.dart';
 // import 'package:flutter/material.dart';
-// import 'package:flutter_screenutil/flutter_screenutil.dart';
-// import 'package:flutter_svg/svg.dart';
+// // import 'package:flutter_svg/svg.dart';
 
 // /// 💬 WDialog
 // /// A utility class for showing animated, customizable dialogs:
@@ -191,9 +190,9 @@
 //       children: [
 //         gapY(20),
 //         if (isLogOut)
-//           SvgPicture.asset(Assets.logo.logout, height: iconHeight ?? 50.h)
+//           SvgPicture.asset(Assets.logo.logout, height: iconHeight ?? 50)
 //         else
-//           Icon(Icons.exit_to_app, size: iconHeight ?? 50.h),
+//           Icon(Icons.exit_to_app, size: iconHeight ?? 50),
 //         if (title != null)
 //           Text(
 //             title!,
@@ -205,7 +204,7 @@
 //           WPrimaryButton(
 //             text: "Okay",
 //             onTap: () => Navigation.pop(),
-//             width: 130.w,
+//             width: 130,
 //           )
 //         else
 //           Row(

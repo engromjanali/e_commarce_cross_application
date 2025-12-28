@@ -27,8 +27,8 @@ class WNavigationBar extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: PTheme.spaceY),
       decoration: BoxDecoration(
         // borderRadius: BorderRadius.only(
-        //   topLeft: Radius.circular(16.r),
-        //   topRight: Radius.circular(16.r),
+        //   topLeft: Radius.circular(16),
+        //   topRight: Radius.circular(16),
         // ),
         // border: Border(
         //   top: BorderSide(

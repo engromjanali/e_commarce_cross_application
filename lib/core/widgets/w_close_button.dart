@@ -1,6 +1,5 @@
 import 'package:e_commarce_site/core/extensions/ex_build_context.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 /// ❌ WClose
 /// A circular close button with gradient styling and shadow.
@@ -32,9 +31,9 @@ class WClose extends StatelessWidget {
           ],
         ),
         child: CircleAvatar(
-          radius: 16.r,
+          radius: 16,
           backgroundColor: Colors.transparent,
-          child: Icon(Icons.close, color: context.indicatorColor, size: 20.h),
+          child: Icon(Icons.close, color: context.indicatorColor, size: 20),
         ),
       ),
     );

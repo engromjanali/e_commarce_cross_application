@@ -3,7 +3,6 @@ import 'package:e_commarce_site/core/extensions/ex_build_context.dart';
 import 'package:e_commarce_site/core/extensions/ex_padding.dart';
 import 'package:e_commarce_site/core/widgets/w_button.dart';
 import 'package:e_commarce_site/gen/assets.gen.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -19,7 +18,7 @@ class WError extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SvgPicture.asset(Assets.logo.a404Error, height: 200.h),
+          SvgPicture.asset(Assets.logo.a404Error, height: 200),
           Text(
             message,
             textAlign: TextAlign.center,

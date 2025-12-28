@@ -2,7 +2,6 @@ import 'package:e_commarce_site/core/constants/colors.dart';
 import 'package:e_commarce_site/core/constants/dimension_theme.dart';
 import 'package:e_commarce_site/core/controllers/c_base.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CTheme extends CBase {
   int currentIndex = 0;
@@ -21,7 +20,8 @@ class CTheme extends CBase {
     brightness: Brightness.light,
     useMaterial3: true,
     cardColor: PColors.cardColorLight,
-    primaryColor: PColors.primayTextColorLight,
+    primaryColor: PColors.primaryColorLight,
+    disabledColor: PColors.deactiveTextColorLight,
     unselectedWidgetColor: PColors.secondaryTextColorLight,
     scaffoldBackgroundColor: PColors.backGroundColorLight,
     splashColor: const Color(0xFF6F23FD).withValues(alpha: 0.1),
@@ -29,18 +29,17 @@ class CTheme extends CBase {
     splashFactory: InkRipple.splashFactory,
     canvasColor: Colors.black.withValues(alpha: 0.05),
     dividerColor: PColors.dividerColorLight,
-
-    tabBarTheme: TabBarThemeData(indicatorColor: Colors.black),
+    tabBarTheme: TabBarThemeData(indicatorColor: PColors.secondaryColorLight),
 
     // ▶️ AppBar Theme
     appBarTheme: AppBarTheme(
-      backgroundColor: PColors.appBarColorLight,
+      backgroundColor: PColors.backGroundColorLight,
       iconTheme: const IconThemeData(color: PColors.primayTextColorLight),
       centerTitle: true,
       titleTextStyle: TextStyle(
         color: PColors.primayTextColorLight,
         fontWeight: FontWeight.w500,
-        fontSize: 20.sp,
+        fontSize: 20,
       ),
     ),
 
@@ -56,64 +55,65 @@ class CTheme extends CBase {
       // headline for large text
       headlineLarge: TextStyle(
         color: PColors.primayTextColorLight,
-        fontSize: 32.sp,
+        fontSize: 32,
         fontWeight: FontWeight.w600,
       ),
       headlineMedium: TextStyle(
         color: PColors.primayTextColorLight,
-        fontSize: 30.sp,
+        fontSize: 30,
         fontWeight: FontWeight.w900,
       ),
       headlineSmall: TextStyle(
         color: PColors.primayTextColorLight,
-        fontSize: 28.sp,
+        fontSize: 28,
         fontWeight: FontWeight.w600,
       ),
       //title for mid large
       titleLarge: TextStyle(
         color: PColors.primayTextColorLight,
-        fontSize: 24.sp,
+        fontSize: 24,
         fontWeight: FontWeight.w700,
       ),
       titleMedium: TextStyle(
         color: PColors.primayTextColorLight,
-        fontSize: 20.sp,
+        fontSize: 20,
         fontWeight: FontWeight.w700,
       ),
       titleSmall: TextStyle(
         color: PColors.primayTextColorLight,
-        fontSize: 16.sp,
+        fontSize: 16,
         fontWeight: FontWeight.w700,
       ),
       //title for subtitle
       bodyLarge: TextStyle(
-        color: PColors.secondaryTextColorLight,
-        fontSize: 16.sp,
+        color: PColors.primayTextColorLight,
+        fontSize: 16,
         fontWeight: FontWeight.w400,
       ),
       bodyMedium: TextStyle(
-        color: PColors.secondaryTextColorLight,
-        fontSize: 14.sp,
+        color: PColors.primayTextColorLight,
+        fontSize: 14,
         fontWeight: FontWeight.w400,
       ),
       bodySmall: TextStyle(
-        color: PColors.secondaryTextColorLight,
-        fontSize: 12.sp,
+        color: PColors.primayTextColorLight,
+        fontSize: 12,
         fontWeight: FontWeight.w400,
       ),
+      // subtitle
       labelLarge: TextStyle(
-        color: PColors.primayTextColorLight,
-        fontSize: 16.sp,
+        color: PColors.secondaryTextColorLight,
+        fontSize: 16,
         fontWeight: FontWeight.w600,
       ),
       labelMedium: TextStyle(
-        color: PColors.primayTextColorLight,
-        fontSize: 14.sp,
+        color: PColors.secondaryTextColorLight,
+        fontSize: 14,
         fontWeight: FontWeight.w600,
       ),
       labelSmall: TextStyle(
-        color: PColors.primayTextColorLight,
-        fontSize: 12.sp,
+        color: PColors.secondaryTextColorLight,
+        fontSize: 12,
         fontWeight: FontWeight.w600,
       ),
     ),
@@ -123,13 +123,13 @@ class CTheme extends CBase {
       filled: true,
       fillColor: PColors.fillColorLight,
       hintStyle: TextStyle(
-        color: PColors.hintTextColorLight,
-        fontSize: 15.sp,
+        color: PColors.deactiveTextColorLight,
+        fontSize: 15,
         fontWeight: FontWeight.w400,
       ),
       errorStyle: TextStyle(
         color: Colors.red,
-        fontSize: 12.sp,
+        fontSize: 12,
         fontWeight: FontWeight.w400,
       ),
       border: OutlineInputBorder(
@@ -186,7 +186,9 @@ class CTheme extends CBase {
     brightness: Brightness.dark,
     useMaterial3: true,
     cardColor: PColors.cardColorDark,
-    primaryColor: PColors.primayTextColorDark,
+    primaryColor: PColors.primaryColorDark,
+    primaryTextTheme: TextTheme(),
+    disabledColor: PColors.deactiveTextColorDark,
     unselectedWidgetColor: PColors.secondaryTextColorDark,
     scaffoldBackgroundColor: PColors.backGroundColorDark,
     splashColor: const Color(0xFF6F23FD).withValues(alpha: 0.1),
@@ -194,8 +196,7 @@ class CTheme extends CBase {
     splashFactory: InkRipple.splashFactory,
     canvasColor: Colors.black.withValues(alpha: 0.05),
     dividerColor: PColors.dividerColorDark,
-
-    tabBarTheme: TabBarThemeData(indicatorColor: Colors.black),
+    tabBarTheme: TabBarThemeData(indicatorColor: PColors.secondaryColorDark),
 
     // ▶️ AppBar Theme
     appBarTheme: AppBarTheme(
@@ -205,7 +206,7 @@ class CTheme extends CBase {
       titleTextStyle: TextStyle(
         color: PColors.primayTextColorDark,
         fontWeight: FontWeight.w500,
-        fontSize: 20.sp,
+        fontSize: 20,
       ),
     ),
     navigationBarTheme: NavigationBarThemeData(
@@ -220,64 +221,64 @@ class CTheme extends CBase {
       // headline for large text
       headlineLarge: TextStyle(
         color: PColors.primayTextColorDark,
-        fontSize: 32.sp,
+        fontSize: 32,
         fontWeight: FontWeight.w600,
       ),
       headlineMedium: TextStyle(
         color: PColors.primayTextColorDark,
-        fontSize: 30.sp,
+        fontSize: 30,
         fontWeight: FontWeight.w600,
       ),
       headlineSmall: TextStyle(
         color: PColors.primayTextColorDark,
-        fontSize: 28.sp,
+        fontSize: 28,
         fontWeight: FontWeight.w600,
       ),
       //title for mid large
       titleLarge: TextStyle(
         color: PColors.primayTextColorDark,
-        fontSize: 24.sp,
+        fontSize: 24,
         fontWeight: FontWeight.w700,
       ),
       titleMedium: TextStyle(
         color: PColors.primayTextColorDark,
-        fontSize: 20.sp,
+        fontSize: 20,
         fontWeight: FontWeight.w700,
       ),
       titleSmall: TextStyle(
         color: PColors.primayTextColorDark,
-        fontSize: 16.sp,
+        fontSize: 16,
         fontWeight: FontWeight.w700,
       ),
       //title for subtitle
       bodyLarge: TextStyle(
-        color: PColors.secondaryTextColorDark,
-        fontSize: 16.sp,
+        color: PColors.primayTextColorDark,
+        fontSize: 16,
         fontWeight: FontWeight.w400,
       ),
       bodyMedium: TextStyle(
-        color: PColors.secondaryTextColorDark,
-        fontSize: 14.sp,
+        color: PColors.primayTextColorDark,
+        fontSize: 14,
         fontWeight: FontWeight.w400,
       ),
       bodySmall: TextStyle(
-        color: PColors.secondaryTextColorDark,
-        fontSize: 12.sp,
+        color: PColors.primayTextColorDark,
+        fontSize: 12,
         fontWeight: FontWeight.w600,
       ),
       labelLarge: TextStyle(
-        color: PColors.primayTextColorDark,
-        fontSize: 16.sp,
+        color: PColors.secondaryTextColorDark,
+        fontSize: 16,
         fontWeight: FontWeight.w600,
       ),
       labelMedium: TextStyle(
-        color: PColors.primayTextColorDark,
-        fontSize: 14.sp,
+        color: PColors.secondaryTextColorDark,
+        fontSize: 14,
         fontWeight: FontWeight.w600,
       ),
       labelSmall: TextStyle(
-        color: PColors.primayTextColorDark,
-        fontSize: 12.sp,
+        color: PColors.secondaryTextColorDark,
+        fontSize: 12,
         fontWeight: FontWeight.w600,
       ),
     ),
@@ -287,13 +288,13 @@ class CTheme extends CBase {
       filled: true,
       fillColor: PColors.fillColorDark,
       hintStyle: TextStyle(
-        color: PColors.hintTextColorDark,
-        fontSize: 15.sp,
+        color: PColors.deactiveTextColorDark,
+        fontSize: 15,
         fontWeight: FontWeight.w400,
       ),
       errorStyle: TextStyle(
         color: Colors.red,
-        fontSize: 12.sp,
+        fontSize: 12,
         fontWeight: FontWeight.w400,
       ),
       border: OutlineInputBorder(

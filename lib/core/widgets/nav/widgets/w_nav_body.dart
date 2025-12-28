@@ -2,7 +2,6 @@ import 'package:e_commarce_site/core/extensions/ex_build_context.dart';
 import 'package:e_commarce_site/core/extensions/ex_padding.dart';
 import 'package:e_commarce_site/core/functions/f_is_null.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../models/m_nav_bar_item.dart';
 import 'package:vector_math/vector_math_64.dart';
@@ -53,8 +52,8 @@ class WBody extends StatelessWidget {
                     children: [
                       SvgPicture.asset(
                         isSelected ? item.icon : item.unSelectedIcon,
-                        height: 25.w,
-                        width: 25.w,
+                        height: 25,
+                        width: 25,
                         colorFilter: ColorFilter.mode(
                           isSelected
                               ? context.primaryTextColor!

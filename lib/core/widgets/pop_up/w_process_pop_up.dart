@@ -1,7 +1,6 @@
 // import 'package:flutter_svg/svg.dart';
 // import 'package:flutter/material.dart';
-// import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+//
 // class WProcessPopUp extends StatefulWidget {
 //   final String? testingUrl;
 //   const WProcessPopUp({super.key, this.testingUrl});
@@ -20,8 +19,8 @@
 //       insetPadding: EdgeInsets.all(0),
 //       child: Center(
 //         child: WContainer(
-//           width: 320.w,
-//           height: 374.h,
+//           width: 320,
+//           height: 374,
 //           child: Column(
 //             crossAxisAlignment: CrossAxisAlignment.start,
 //             children: [
@@ -39,7 +38,7 @@
 //                 children: List.generate(
 //                   itemCount,
 //                   (index) => Container(
-//                     height: 3.h,
+//                     height: 3,
 //                     decoration: BoxDecoration(
 //                         borderRadius:
 //                             BorderRadius.circular(PTheme.borderRadius),
@@ -69,8 +68,8 @@
 //                           ?.copyWith(fontWeight: FontWeight.w500),
 //                     ).pV(),
 //                     WPrimaryButton(
-//                       height: 40.h,
-//                       width: 155.w,
+//                       height: 40,
+//                       width: 155,
 //                       text: "Open App",
 //                       onTap: () async {
 //                         OpenURLs.open(

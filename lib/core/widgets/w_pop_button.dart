@@ -1,7 +1,6 @@
 import 'package:e_commarce_site/core/extensions/ex_padding.dart';
 import 'package:e_commarce_site/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class WPButton extends StatelessWidget {
   final Function() onTap;
@@ -24,7 +23,7 @@ class WPButton extends StatelessWidget {
       onTap: onTap,
       child: Image.asset(
         isWButton ? Assets.icons.close2.path : Assets.icons.close.path,
-        height: size.w,
+        height: size,
       ),
     ).pAll(value: 10);
   }

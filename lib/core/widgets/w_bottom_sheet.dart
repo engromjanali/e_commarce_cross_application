@@ -7,8 +7,7 @@
 // import 'package:e_commarce_site/core/widgets/w_close_button.dart';
 // import 'package:flutter/cupertino.dart';
 // import 'package:flutter/material.dart';
-// import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+//
 // /// 📦 Utility class to display reusable bottom sheets
 // class WBottomSheet {
 //   /// 📄 Shows a blurred custom modal popup
@@ -35,10 +34,10 @@
 //             color: ctx.theme.brightness == Brightness.dark
 //                 ? ctx.cardColor
 //                 : ctx.indicatorColor,
-//             borderRadius: BorderRadius.vertical(top: Radius.circular(25.0.r)),
+//             borderRadius: BorderRadius.vertical(top: Radius.circular(25.0)),
 //           ),
 //           child: Material(
-//             borderRadius: BorderRadius.vertical(top: Radius.circular(25.0.r)),
+//             borderRadius: BorderRadius.vertical(top: Radius.circular(25.0)),
 //             color: ctx.theme.brightness == Brightness.dark
 //                 ? ctx.cardColor
 //                 : ctx.indicatorColor,
@@ -75,7 +74,7 @@
 //                           Text(
 //                             title ?? "N/A",
 //                             style: modalContext.textTheme?.titleLarge?.copyWith(
-//                               fontSize: 20.sp,
+//                               fontSize: 20,
 //                             ),
 //                           ),
 //                           const WClose(),
