@@ -29,84 +29,72 @@ class _SHomeState extends State<SHome> {
     return DefaultTabController(
       length: 3,
       child: Scaffold(
-        body: Stack(
+        bottomNavigationBar: _BottomNavBar(),
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            /// Main Content
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                /// 🔹 Header
-                Container(
-                  color: context.theme.primaryColor,
-                  child: SafeArea(
-                    child: Column(
+            /// 🔹 Header
+            Container(
+              color: context.theme.primaryColor,
+              child: SafeArea(
+                child: Column(
+                  children: [
+                    gapY(10),
+                    Row(
                       children: [
-                        Row(
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "Hello, Welcome 👋",
-                                  style: context.textTheme.bodyMedium,
-                                ),
-                                Text(
-                                  "Albert Stevano",
-                                  style: context.textTheme.bodySmall,
-                                ),
-                              ],
+                            Text(
+                              "Hello, Welcome 👋",
+                              style: context.textTheme.bodyMedium,
                             ),
-                            const Spacer(),
-                            WImage(
-                              "imageUrl",
-                              payload: MImagePayload(
-                                height: 50,
-                                width: 50,
-                                isCircular: true,
-                                isProfileImage: true,
-                              ),
+                            Text(
+                              "Albert Stevano",
+                              style: context.textTheme.bodySmall,
                             ),
                           ],
                         ),
-                        const SizedBox(height: 20),
-                        TabBar(
-                          isScrollable: ResponsiveHelper.isMobilePhone(),
-                          tabs: const [
-                            Tab(text: "Explore"),
-                            Tab(text: "Sports"),
-                            Tab(text: "Women's"),
-                          ],
+                        const Spacer(),
+                        WImage(
+                          PDefaultValues.profileImage,
+                          payload: MImagePayload(
+                            height: 50,
+                            width: 50,
+                            isCircular: true,
+                            fit: BoxFit.fill,
+                            isProfileImage: true,
+                          ),
                         ),
                       ],
-                    ).pH(),
-                  ),
-                ),
-
-                WTextField(
-                  hintText: "What are you looking for?",
-                  suffixIcon: Icon(Icons.search),
-                ).pAll(),
-
-                Expanded(
-                  child: TabBarView(
-                    children: [
-                      _categoryView(context),
-                      brandView(context),
-                      popularView(),
-                    ],
-                  ),
-                ),
-
-                const SizedBox(height: 80), // space for bottom bar
-              ],
+                    ),
+                    const SizedBox(height: 20),
+                    TabBar(
+                      isScrollable: ResponsiveHelper.isMobilePhone(),
+                      tabs: const [
+                        Tab(text: "Explore"),
+                        Tab(text: "Sports"),
+                        Tab(text: "Women's"),
+                      ],
+                    ),
+                  ],
+                ).pH(),
+              ),
             ),
 
-            /// 🔹 Bottom Navigation Bar
-            const Positioned(
-              bottom: 16,
-              left: 16,
-              right: 16,
-              child: _BottomNavBar(),
+            WTextField(
+              hintText: "What are you looking for?",
+              suffixIcon: Icon(Icons.search),
+            ).pAll(),
+
+            Expanded(
+              child: TabBarView(
+                children: [
+                  _categoryView(context),
+                  brandView(context),
+                  popularView(),
+                ],
+              ),
             ),
           ],
         ),
