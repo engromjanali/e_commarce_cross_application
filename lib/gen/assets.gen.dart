@@ -143,6 +143,9 @@ class $AssetsImagesGen {
   /// Directory path: assets/images/bad
   $AssetsImagesBadGen get bad => const $AssetsImagesBadGen();
 
+  /// Directory path: assets/images/discount
+  $AssetsImagesDiscountGen get discount => const $AssetsImagesDiscountGen();
+
   /// Directory path: assets/images/good
   $AssetsImagesGoodGen get good => const $AssetsImagesGoodGen();
 
@@ -300,8 +303,8 @@ class $AssetsIconsBottomNavGen {
   /// File path: assets/icons/bottom_nav/categories.svg
   String get categories => 'assets/icons/bottom_nav/categories.svg';
 
-  /// File path: assets/icons/bottom_nav/hoome.svg
-  String get hoome => 'assets/icons/bottom_nav/hoome.svg';
+  /// File path: assets/icons/bottom_nav/home.svg
+  String get home => 'assets/icons/bottom_nav/home.svg';
 
   /// File path: assets/icons/bottom_nav/menu.svg
   String get menu => 'assets/icons/bottom_nav/menu.svg';
@@ -310,7 +313,7 @@ class $AssetsIconsBottomNavGen {
   String get stores => 'assets/icons/bottom_nav/stores.svg';
 
   /// List of all assets
-  List<String> get values => [card, categories, hoome, menu, stores];
+  List<String> get values => [card, categories, home, menu, stores];
 }
 
 class $AssetsImagesBadGen {
@@ -342,6 +345,17 @@ class $AssetsImagesBadGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [a1, a2, a3, a4, a5, a6, a7, a8];
+}
+
+class $AssetsImagesDiscountGen {
+  const $AssetsImagesDiscountGen();
+
+  /// File path: assets/images/discount/flash.png
+  AssetGenImage get flash =>
+      const AssetGenImage('assets/images/discount/flash.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [flash];
 }
 
 class $AssetsImagesGoodGen {

@@ -33,4 +33,6 @@ class PDefaultValues {
   static const linkedIn = "https://www.linkedin.com/in/engromjanali/";
   static const profileImage =
       "https://res.cloudinary.com/dskavcx9z/image/upload/v1762793373/IMG_3963_1_fouocn.png";
+  static const foodImage =
+      "https://res.cloudinary.com/dskavcx9z/image/upload/v1764069418/o_1_wxxucl.png";
 }

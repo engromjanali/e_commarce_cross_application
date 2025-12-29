@@ -25,62 +25,40 @@ class MyApp extends StatelessWidget {
       init: Get.put(CTheme()),
       builder: (controller) {
         return GetMaterialApp(
+          locale: DevicePreview.locale(context),
+          // navigatorObservers: [NavigationService.routeObserver],
           debugShowCheckedModeBanner: false,
-          title: 'Flutter Demo',
-          theme: ThemeData(
-            // This is the theme of your application.
-            //
-            // TRY THIS: Try running your application with "flutter run". You'll see
-            // the application has a purple toolbar. Then, without quitting the app,
-            // try changing the seedColor in the colorScheme below to Colors.green
-            // and then invoke "hot reload" (save your changes or press the "hot
-            // reload" button in a Flutter-supported IDE, or press "r" if you used
-            // the command line to start the app).
-            //
-            // Notice that the counter didn't reset back to zero; the application
-            // state is not lost during the reload. To reset the state, use hot
-            // restart instead.
-            //
-            // This works for code too, not just values: Most code changes can be
-            // tested with just a hot reload.
-            colorScheme: .fromSeed(seedColor: Colors.deepPurple),
-          ),
-          home: MaterialApp(
-            locale: DevicePreview.locale(context),
-            // navigatorObservers: [NavigationService.routeObserver],
-            debugShowCheckedModeBanner: false,
-            // navigatorKey: NavigationService.key,
-            theme: controller.themeList.first,
-            darkTheme: controller.themeList.last,
-            themeMode: ThemeMode.system,
-            builder: (contxt, child) {
-              child = DevicePreview.appBuilder(contxt, child);
+          // navigatorKey: NavigationService.key,
+          theme: controller.themeList.first,
+          darkTheme: controller.themeList.last,
+          themeMode: ThemeMode.system,
+          builder: (contxt, child) {
+            child = DevicePreview.appBuilder(contxt, child);
 
-              return AnnotatedRegion<SystemUiOverlayStyle>(
-                value: SystemUiOverlayStyle(
-                  statusBarColor: Colors.transparent,
-                  statusBarIconBrightness:
-                      contxt.theme.brightness == Brightness.dark
-                      ? Brightness.light
-                      : Brightness.dark,
-                ),
-                child: ScrollConfiguration(
-                  behavior: PScrollBehavior(),
-                  child: kIsWeb
-                      ? Center(
-                          child: ConstrainedBox(
-                            constraints: const BoxConstraints(
-                              // maxWidth: 480,
-                            ), // ✅ adjust width here
-                            child: child!,
-                          ),
-                        )
-                      : child!,
-                ),
-              );
-            },
-            home: const SHome(),
-          ),
+            return AnnotatedRegion<SystemUiOverlayStyle>(
+              value: SystemUiOverlayStyle(
+                statusBarColor: Colors.transparent,
+                statusBarIconBrightness:
+                    contxt.theme.brightness == Brightness.dark
+                    ? Brightness.light
+                    : Brightness.dark,
+              ),
+              child: ScrollConfiguration(
+                behavior: PScrollBehavior(),
+                child: kIsWeb
+                    ? Center(
+                        child: ConstrainedBox(
+                          constraints: const BoxConstraints(
+                            // maxWidth: 480,
+                          ), // ✅ adjust width here
+                          child: child!,
+                        ),
+                      )
+                    : child!,
+              ),
+            );
+          },
+          home: const SHome(),
         );
       },
     );

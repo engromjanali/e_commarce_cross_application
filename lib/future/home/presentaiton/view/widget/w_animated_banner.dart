@@ -1,3 +1,6 @@
+import 'package:e_commarce_site/core/constants/colors.dart';
+import 'package:e_commarce_site/core/constants/style.dart';
+import 'package:e_commarce_site/core/extensions/ex_expanded.dart';
 import 'package:e_commarce_site/core/extensions/ex_padding.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_utils/src/extensions/context_extensions.dart';
@@ -49,12 +52,13 @@ class _WAnimatedBannerState extends State<WAnimatedBanner> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 180,
-      child: Stack(
-        children: [
-          /// 🔹 Sliding Banners
-          PageView.builder(
+    return Column(
+      children: [
+        /// 🔹 Sliding Banners
+        SizedBox(
+          height: 110,
+          width: double.infinity,
+          child: PageView.builder(
             controller: _controller,
             itemCount: banners.length,
             onPageChanged: (index) {
@@ -62,50 +66,83 @@ class _WAnimatedBannerState extends State<WAnimatedBanner> {
             },
             itemBuilder: (_, index) {
               final item = banners[index];
-              return Container(
-                decoration: BoxDecoration(
-                  color: item.color,
-                  borderRadius: BorderRadius.circular(16),
-                ),
-                alignment: Alignment.center,
-                child: Text(
-                  item.title,
-                  style: const TextStyle(
-                    fontSize: 24,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
+              return ClipRRect(
+                borderRadius: BorderRadius.circular(5),
+                child: Container(
+                  height: double.infinity,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    // color: item.color,
+                  ),
+                  // alignment: Alignment.center,
+                  child: Stack(
+                    children: [
+                      Container(
+                        height: double.infinity,
+                        width: double.infinity,
+                        color: Colors.amber,
+                        // child: Text("data"),
+                      ),
+                      Positioned(
+                        bottom: 0,
+                        right: 0,
+                        child: Container(
+                          height: 15,
+                          width: 67,
+                          decoration: BoxDecoration(
+                            // color: Colors.red,
+                            color: Colors.transparent,
+                            borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(5),
+                            ),
+                            boxShadow: [
+                              BoxShadow(color: AppColors.primary()),
+                              BoxShadow(
+                                color: AppColors.primary().withAlpha(20),
+                              ),
+                            ],
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                "Shop Now",
+                                textAlign: TextAlign.center,
+                                style: interRegular.copyWith(fontSize: h1),
+                              ),
+                              Icon(Icons.arrow_forward_ios_outlined, size: h1),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               );
             },
           ),
+        ).pB(),
 
-          /// 🔹 Animated Indicator (Bottom Center)
-          Positioned(
-            bottom: 12,
-            left: 0,
-            right: 0,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: List.generate(
-                banners.length,
-                (index) => AnimatedContainer(
-                  duration: const Duration(milliseconds: 300),
-                  margin: const EdgeInsets.symmetric(horizontal: 4),
-                  height: 8,
-                  width: _currentIndex == index ? 22 : 8,
-                  decoration: BoxDecoration(
-                    color: _currentIndex == index
-                        ? context.theme.primaryColor
-                        : Colors.white.withOpacity(0.5),
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                ),
+        // /// 🔹 Animated Indicator (Bottom Center)
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: List.generate(
+            banners.length,
+            (index) => AnimatedContainer(
+              duration: const Duration(milliseconds: 300),
+              margin: const EdgeInsets.symmetric(horizontal: 4),
+              height: 5,
+              width: _currentIndex == index ? 22 : 8,
+              decoration: BoxDecoration(
+                color: _currentIndex == index
+                    ? context.theme.primaryColor
+                    : AppColors.textDisabled(),
+                borderRadius: BorderRadius.circular(8),
               ),
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 

@@ -1,4 +1,8 @@
+import 'package:e_commarce_site/core/functions/f_printer.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart' show Get;
+import 'package:get/get_navigation/src/extension_navigation.dart'
+    show GetNavigation;
 import 'package:get/get_utils/src/extensions/context_extensions.dart';
 
 /// 🎨 PColors
@@ -25,8 +29,8 @@ class PColors {
   // Light Color
   static const lightColorLight = Color(0xFFE9F3FF);
   static const lightColorDark = Color(0x1AE9F3FF);
-  Color lightColor(BuildContext context) =>
-      context.theme.brightness == Brightness.dark
+  Color lightColor({BuildContext? buildContext}) =>
+      (buildContext ?? Get.context!).theme.brightness == Brightness.dark
       ? lightColorDark
       : lightColorLight;
 
@@ -114,4 +118,81 @@ class PColors {
   // static const pendingColor = Color(0xFFA8986B);
   // static const timeoutColor = Colors.red;
   // static const completedColor = Color(0xff004d4d);
+}
+
+class AppColors {
+  // 🔹 Primary
+  static Color primary({BuildContext? buildContext}) =>
+      (buildContext ?? Get.context!).isDarkMode
+      ? PColors.primaryColorDark
+      : PColors.primaryColorLight;
+
+  static Color secondary({BuildContext? buildContext}) =>
+      (buildContext ?? Get.context!).isDarkMode
+      ? PColors.secondaryColorDark
+      : PColors.secondaryColorLight;
+
+  // 🔹 Background
+  static Color background({BuildContext? buildContext}) {
+    if (Get.context!.theme.brightness == Brightness.dark) {
+      printer("Yes");
+    } else {
+      printer("No");
+    }
+
+    return (buildContext ?? Get.context!).isDarkMode
+        ? PColors.backGroundColorDark
+        : PColors.backGroundColorLight;
+  }
+
+  static Color card({BuildContext? buildContext}) =>
+      (buildContext ?? Get.context!).isDarkMode
+      ? PColors.cardColorDark
+      : PColors.cardColorLight;
+
+  // 🔹 Text
+  // static Color textPrimary({BuildContext? buildContext}) =>
+  // (buildContext ?? Get.context!).isDarkMode
+  // ? PColors.primayTextColorDark
+  // : PColors.primayTextColorLight;
+  static Color textPrimary() => Get.isDarkMode
+      ? PColors.primayTextColorDark
+      : PColors.primayTextColorLight;
+
+  static Color textSecondary({BuildContext? buildContext}) =>
+      (buildContext ?? Get.context!).isDarkMode
+      ? PColors.secondaryTextColorDark
+      : PColors.secondaryTextColorLight;
+
+  static Color textDisabled({BuildContext? buildContext}) =>
+      (buildContext ?? Get.context!).isDarkMode
+      ? PColors.deactiveTextColorDark
+      : PColors.deactiveTextColorLight;
+
+  // 🔹 Border & Divider
+  static Color border({BuildContext? buildContext}) =>
+      (buildContext ?? Get.context!).isDarkMode
+      ? PColors.borderColorDark
+      : PColors.borderColorLight;
+
+  static Color divider({BuildContext? buildContext}) =>
+      (buildContext ?? Get.context!).isDarkMode
+      ? PColors.dividerColorDark
+      : PColors.dividerColorLight;
+
+  // 🔹 Buttons
+  static Color primaryButton({BuildContext? buildContext}) =>
+      (buildContext ?? Get.context!).isDarkMode
+      ? PColors.primaryButtonColorDark
+      : PColors.primaryButtonColorLight;
+
+  static Color secondaryButton({BuildContext? buildContext}) =>
+      (buildContext ?? Get.context!).isDarkMode
+      ? PColors.secondaryButtonColorDark
+      : PColors.secondaryButtonColorLight;
+
+  // 🔹 Status colors (same for both modes)
+  static const Color success = PColors.successColorLight;
+  static const Color warning = PColors.warningColorLight;
+  static const Color danger = PColors.taqColorLight;
 }

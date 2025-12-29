@@ -19,7 +19,7 @@ extension ThemeExtension on BuildContext {
   Color? get indicatorColor => Theme.of(this).tabBarTheme.indicatorColor;
   // text color
   Color? get secondaryTextColor => Theme.of(this).textTheme.bodyLarge!.color;
-  Color? get primaryTextColor => Theme.of(this).primaryColor;
+  Color? get primaryTextColor => Theme.of(this).textTheme.bodyLarge!.color;
   // background color
   Color? get backgroundColor => Theme.of(this).scaffoldBackgroundColor;
   // Text theme

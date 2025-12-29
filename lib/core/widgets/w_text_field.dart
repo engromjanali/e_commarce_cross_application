@@ -38,6 +38,7 @@ class WTextField extends StatefulWidget {
   final int? minLines;
   final bool? expands;
   final AutovalidateMode? autovalidateMode;
+  final TextAlignVertical? textAlignVertical;
   const WTextField({
     super.key,
     this.label,
@@ -59,6 +60,7 @@ class WTextField extends StatefulWidget {
     this.textInputAction = TextInputAction.next,
     this.expands,
     this.autovalidateMode,
+    this.textAlignVertical,
   }) : obsecureText = false,
        isRequired = false;
 
@@ -84,6 +86,7 @@ class WTextField extends StatefulWidget {
     this.textInputAction = TextInputAction.next,
     this.expands,
     this.autovalidateMode,
+    this.textAlignVertical,
   }) : obsecureText = true;
   const WTextField.requiredField({
     super.key,
@@ -106,6 +109,7 @@ class WTextField extends StatefulWidget {
     this.textInputAction = TextInputAction.next,
     this.expands,
     this.autovalidateMode,
+    this.textAlignVertical,
   }) : obsecureText = false,
        isRequired = true;
 
@@ -171,7 +175,7 @@ class _WTextFieldState extends State<WTextField> {
 
   Widget _textField() {
     return TextFormField(
-      textAlignVertical: TextAlignVertical.top,
+      textAlignVertical: widget.textAlignVertical ?? TextAlignVertical.center,
       validator: (v) {
         final validation = widget.validator?.call(v);
 

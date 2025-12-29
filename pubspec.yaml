@@ -94,6 +94,7 @@ flutter:
     - assets/images/
     - assets/images/good/
     - assets/images/bad/
+    - assets/images/discount/
     - assets/icons/
     - assets/fonts/
     - assets/logo/
