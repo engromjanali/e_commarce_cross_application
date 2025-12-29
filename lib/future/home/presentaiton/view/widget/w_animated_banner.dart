@@ -2,6 +2,8 @@ import 'package:e_commarce_site/core/constants/colors.dart';
 import 'package:e_commarce_site/core/constants/style.dart';
 import 'package:e_commarce_site/core/extensions/ex_expanded.dart';
 import 'package:e_commarce_site/core/extensions/ex_padding.dart';
+import 'package:e_commarce_site/core/widgets/image/m_image_payload.dart';
+import 'package:e_commarce_site/core/widgets/image/w_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_utils/src/extensions/context_extensions.dart';
 
@@ -81,7 +83,10 @@ class _WAnimatedBannerState extends State<WAnimatedBanner> {
                         height: double.infinity,
                         width: double.infinity,
                         color: Colors.amber,
-                        // child: Text("data"),
+                        child: WImage(
+                          "https://res.cloudinary.com/dskavcx9z/image/upload/v1767030642/Rectangle_1_nqnuvf.png",
+                          payload: MImagePayload(fit: BoxFit.fill),
+                        ),
                       ),
                       Positioned(
                         bottom: 0,

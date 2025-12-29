@@ -22,8 +22,8 @@ Widget gapX(double pt) => SizedBox(width: pt);
 extension PaddingExtension on Widget {
   Widget pAll({double? value}) => Padding(
     padding: EdgeInsets.symmetric(
-      horizontal: value ?? PTheme.paddingX,
-      vertical: value?? PTheme.paddingY,
+      horizontal: value ?? PTheme.spaceX,
+      vertical: value ?? PTheme.spaceY,
     ),
     child: this,
   );
@@ -32,15 +32,15 @@ extension PaddingExtension on Widget {
     child: this,
   );
   Widget pV({double? value}) => Padding(
-    padding: EdgeInsets.symmetric(vertical: value?? PTheme.spaceX),
+    padding: EdgeInsets.symmetric(vertical: value ?? PTheme.spaceX),
     child: this,
   );
   Widget pT({double? value}) => Padding(
-    padding: EdgeInsets.only(top: value??PTheme.spaceY),
+    padding: EdgeInsets.only(top: value ?? PTheme.spaceY),
     child: this,
   );
   Widget pB({double? value}) => Padding(
-    padding: EdgeInsets.only(bottom: value?? PTheme.spaceX),
+    padding: EdgeInsets.only(bottom: value ?? PTheme.spaceX),
     child: this,
   );
   Widget pL({double? value}) => Padding(

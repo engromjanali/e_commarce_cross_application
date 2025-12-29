@@ -3,7 +3,7 @@ import 'package:flutter/painting.dart';
 class MImagePayload {
   final String? imagePath;
   final String? errorImage;
-  final double? height, width;
+  final double? height, width, borderRadius;
   final BoxFit? fit;
   final bool? isCircular, isProfileImage;
 
@@ -15,5 +15,6 @@ class MImagePayload {
     this.isCircular,
     this.isProfileImage,
     this.width,
+    this.borderRadius,
   });
 }

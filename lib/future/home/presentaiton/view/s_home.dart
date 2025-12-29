@@ -16,8 +16,10 @@ import 'package:e_commarce_site/core/widgets/image/w_image.dart';
 import 'package:e_commarce_site/core/widgets/w_container.dart';
 import 'package:e_commarce_site/core/widgets/w_custom_checkbox.dart';
 import 'package:e_commarce_site/core/widgets/w_text_field.dart';
+import 'package:e_commarce_site/future/home/presentaiton/view/s_explore.dart';
 import 'package:e_commarce_site/future/home/presentaiton/view/widget/w_animated_banner.dart';
 import 'package:e_commarce_site/future/home/presentaiton/view/widget/w_populer.dart';
+import 'package:e_commarce_site/future/home/presentaiton/view/widget/w_product_section.dart';
 import 'package:e_commarce_site/future/home/presentaiton/widget/w_nav_bar.dart';
 import 'package:e_commarce_site/future/home/presentaiton/widget/w_offer_end_in_counter.dart';
 import 'package:e_commarce_site/gen/assets.gen.dart';
@@ -138,16 +140,16 @@ class _SHomeState extends State<SHome> {
               child: TabBarView(
                 physics: AlwaysScrollableScrollPhysics(),
                 children: [
-                  _categoryView(context),
+                  WExplore(context),
                   brandView(context),
                   popularView(),
-                  _categoryView(context),
+                  WExplore(context),
                   brandView(context),
                   popularView(),
-                  _categoryView(context),
+                  WExplore(context),
                   brandView(context),
                   popularView(),
-                  _categoryView(context),
+                  WExplore(context),
                   brandView(context),
                   popularView(),
                 ],
@@ -161,158 +163,6 @@ class _SHomeState extends State<SHome> {
 }
 
 /// ================= Views =================
-Widget _categoryView(BuildContext context) {
-  return SingleChildScrollView(
-    child: Column(
-      children: [
-        // one time product
-        WProductSection(lable: "One Time Deal", isOneTDeal: true),
-
-        WAnimatedBanner().pAll(),
-
-        // future Prducts
-        WProductSection(lable: "Future Prducts"),
-        const SizedBox(height: 20),
-
-        /// 🔹 Category Grid
-        GridView.builder(
-          shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: ResponsiveHelper.isDesktop(context)
-                ? 4
-                : ResponsiveHelper.isTab(context)
-                ? 3
-                : 2,
-            crossAxisSpacing: 12,
-            mainAxisSpacing: 12,
-            childAspectRatio: 0.85,
-          ),
-          itemCount: 8,
-          itemBuilder: (_, index) {
-            return Container(
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                color: Colors.grey.shade100,
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: Text("Category $index"),
-            );
-          },
-        ),
-      ],
-    ),
-  );
-}
-
-class WProduct extends StatelessWidget {
-  bool isWished;
-  final Function(bool)? wishAction;
-  WProduct({super.key, required this.isWished, this.wishAction});
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      width: 120,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          /// 🔹 Image + Wish Button
-          SizedBox(
-            height: 120,
-            child: StatefulBuilder(
-              builder: (_, setLocalState) => Stack(
-                children: [
-                  Container(
-                    height: double.infinity,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: Colors.grey.shade200,
-                      borderRadius: BorderRadius.circular(5),
-                    ),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(5),
-                      child: WImage(
-                        PDefaultValues.foodImage,
-                        payload: MImagePayload(fit: BoxFit.fill),
-                      ),
-                    ),
-                  ),
-
-                  /// ❤️ Wish / Unwish Button
-                  Positioned(
-                    bottom: 8,
-                    right: 8,
-                    child: GestureDetector(
-                      onTap: () {
-                        setLocalState(() {
-                          isWished = !isWished;
-                          wishAction?.call(isWished);
-                        });
-                      },
-                      child: Container(
-                        // padding: const EdgeInsets.all(6),
-                        decoration: const BoxDecoration(
-                          color: Colors.white,
-                          shape: BoxShape.circle,
-                        ),
-                        child: SvgPicture.asset(
-                          isWished
-                              ? Assets.icons.wished
-                              : Assets.icons.unwished,
-                          height: 12,
-                          width: 12,
-                          // fit: BoxFit.cover,
-                          colorFilter: ColorFilter.mode(
-                            isWished
-                                ? PColors.taqColorLight
-                                : AppColors.background(),
-                            BlendMode.srcIn,
-                          ),
-                        ).pAll(value: 8),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-
-          SizedBox(
-            height: 66,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "Blue Color Short Dress sdfkjsd flasdjflsadj",
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                  style: productTitleTextStyle,
-                ),
-                Text("\$3237.87", style: productPriceTextStyle),
-                Row(
-                  children: [
-                    Text(
-                      "\$3500",
-                      style: discountPercentageTextStyle.copyWith(
-                        decoration: TextDecoration.lineThrough,
-                        decorationColor: AppColors.textDisabled(),
-                        color: AppColors.textDisabled(),
-                        decorationThickness: 2,
-                      ),
-                    ).pR(),
-                    WDiscount(label: "-5 %"),
-                  ],
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
 
 class WDiscount extends StatelessWidget {
   final String label;
@@ -379,83 +229,44 @@ class DiscountBadge extends StatelessWidget {
   }
 }
 
-class WProductSection extends StatelessWidget {
-  final String lable;
-  final bool isOneTDeal;
-  final VoidCallback? onTap;
-  const WProductSection({
-    super.key,
-    required this.lable,
-    this.isOneTDeal = false,
-    this.onTap,
-  });
+class WTodaysDeal extends StatelessWidget {
+  const WTodaysDeal({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: isOneTDeal ? PColors().lightColor(buildContext: context) : null,
-      child: Column(
+      width: double.infinity,
+      height: 313,
+      decoration: BoxDecoration(
+        color: AppColors.lightColor(),
+        borderRadius: BorderRadius.circular(5),
+      ),
+      child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                lable,
-                style: interBold.copyWith(
-                  color: !context.isDarkMode && isOneTDeal
-                      ? AppColors.primary()
-                      : AppColors.textPrimary(),
-                  fontSize: h5,
-                ),
-              ).pR(),
-
-              if (isOneTDeal)
-                Row(
-                  children: [
-                    DiscountBadge(
-                      backgroundColor: AppColors.danger,
-                      imagePath: Assets.images.discount.flash.path,
-                    ),
-                    Spacer(),
-                    CountdownTimerWidget(endTime: DateTime(2026, 12, 30)),
-                  ],
-                ).expd(),
-
-              if (!isOneTDeal)
-                TextButton(
-                  style: TextButton.styleFrom(
-                    padding: EdgeInsets.zero,
-                    minimumSize: Size.zero,
-                  ),
-                  onPressed: onTap,
-                  child: Text(
-                    "View All",
-                    style: interSemiBold.copyWith(
-                      fontSize: h2,
-                      color: AppColors.textPrimary(),
-                    ),
-                  ),
-                ),
-            ],
-          ).pB(value: PTheme.paddingY),
-
-          SizedBox(
-            height: 194,
-            child: ListView.separated(
-              scrollDirection: Axis.horizontal,
-              itemCount: 10,
-              separatorBuilder: (_, __) => const SizedBox(width: 12),
-              itemBuilder: (_, index) {
-                return WProduct(
-                  isWished: index % 2 == 0,
-                  wishAction: (val) {},
-                ).pR();
-              },
+          Container(
+            height: 248,
+            decoration: BoxDecoration(
+              color: AppColors.primary(),
+              borderRadius: BorderRadius.circular(PTheme.borderRadius),
             ),
-          ),
+          ).pR().expd(value: 40),
+          Container(
+            child: Column(
+              children: [
+                WImage(
+                  "https://res.cloudinary.com/dskavcx9z/image/upload/v1767030642/Rectangle_1_nqnuvf.png",
+                  payload: MImagePayload(
+                    height: 210,
+                    width: 210,
+                    borderRadius: 5,
+                  ),
+                ),
+              ],
+            ),
+          ).expd(value: 60),
         ],
       ).pAll(),
-    );
+    ).pAll();
   }
 }

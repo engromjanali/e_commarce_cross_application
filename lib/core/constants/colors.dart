@@ -29,10 +29,6 @@ class PColors {
   // Light Color
   static const lightColorLight = Color(0xFFE9F3FF);
   static const lightColorDark = Color(0x1AE9F3FF);
-  Color lightColor({BuildContext? buildContext}) =>
-      (buildContext ?? Get.context!).theme.brightness == Brightness.dark
-      ? lightColorDark
-      : lightColorLight;
 
   // card color
   static const cardColorLight = Color(0XFFFFFFFF);
@@ -131,6 +127,11 @@ class AppColors {
       (buildContext ?? Get.context!).isDarkMode
       ? PColors.secondaryColorDark
       : PColors.secondaryColorLight;
+
+  static Color lightColor({BuildContext? buildContext}) =>
+      (buildContext ?? Get.context!).theme.brightness == Brightness.dark
+      ? PColors.lightColorDark
+      : PColors.lightColorLight;
 
   // 🔹 Background
   static Color background({BuildContext? buildContext}) {
