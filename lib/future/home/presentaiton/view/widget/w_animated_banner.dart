@@ -15,7 +15,8 @@ class BannerItem {
 }
 
 class WAnimatedBanner extends StatefulWidget {
-  const WAnimatedBanner({super.key});
+  final bool showIndicator;
+  const WAnimatedBanner({super.key, this.showIndicator = true});
 
   @override
   State<WAnimatedBanner> createState() => _WAnimatedBannerState();
@@ -129,24 +130,25 @@ class _WAnimatedBannerState extends State<WAnimatedBanner> {
         ).pB(),
 
         // /// 🔹 Animated Indicator (Bottom Center)
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: List.generate(
-            banners.length,
-            (index) => AnimatedContainer(
-              duration: const Duration(milliseconds: 300),
-              margin: const EdgeInsets.symmetric(horizontal: 4),
-              height: 5,
-              width: _currentIndex == index ? 22 : 8,
-              decoration: BoxDecoration(
-                color: _currentIndex == index
-                    ? context.theme.primaryColor
-                    : AppColors.textDisabled(),
-                borderRadius: BorderRadius.circular(8),
+        if (widget.showIndicator)
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: List.generate(
+              banners.length,
+              (index) => AnimatedContainer(
+                duration: const Duration(milliseconds: 300),
+                margin: const EdgeInsets.symmetric(horizontal: 4),
+                height: 5,
+                width: _currentIndex == index ? 22 : 8,
+                decoration: BoxDecoration(
+                  color: _currentIndex == index
+                      ? context.theme.primaryColor
+                      : AppColors.textDisabled(),
+                  borderRadius: BorderRadius.circular(8),
+                ),
               ),
             ),
           ),
-        ),
       ],
     );
   }

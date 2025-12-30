@@ -15,8 +15,9 @@ import 'package:e_commarce_site/core/widgets/image/m_image_payload.dart';
 import 'package:e_commarce_site/core/widgets/image/w_image.dart';
 import 'package:e_commarce_site/core/widgets/w_container.dart';
 import 'package:e_commarce_site/core/widgets/w_custom_checkbox.dart';
+import 'package:e_commarce_site/core/widgets/w_icon.dart';
 import 'package:e_commarce_site/core/widgets/w_text_field.dart';
-import 'package:e_commarce_site/future/home/presentaiton/view/s_explore.dart';
+import 'package:e_commarce_site/future/home/presentaiton/view/explore/s_explore.dart';
 import 'package:e_commarce_site/future/home/presentaiton/view/widget/w_animated_banner.dart';
 import 'package:e_commarce_site/future/home/presentaiton/view/widget/w_populer.dart';
 import 'package:e_commarce_site/future/home/presentaiton/view/widget/w_product_section.dart';
@@ -25,6 +26,8 @@ import 'package:e_commarce_site/future/home/presentaiton/widget/w_offer_end_in_c
 import 'package:e_commarce_site/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:get/get_utils/get_utils.dart';
 import 'package:get/get_utils/src/extensions/context_extensions.dart'
     show ContextExtensionss;
@@ -118,6 +121,7 @@ class _SHomeState extends State<SHome> {
             ),
 
             WTextField(
+              fillColor: Get.isDarkMode ? AppColors.lightColor() : null,
               hintText: "What are you looking for?",
               suffixIcon: LayoutBuilder(
                 builder: (context, constants) {
@@ -236,7 +240,6 @@ class WTodaysDeal extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 313,
       decoration: BoxDecoration(
         color: AppColors.lightColor(),
         borderRadius: BorderRadius.circular(5),
@@ -251,19 +254,70 @@ class WTodaysDeal extends StatelessWidget {
               borderRadius: BorderRadius.circular(PTheme.borderRadius),
             ),
           ).pR().expd(value: 40),
-          Container(
-            child: Column(
-              children: [
-                WImage(
-                  "https://res.cloudinary.com/dskavcx9z/image/upload/v1767030642/Rectangle_1_nqnuvf.png",
-                  payload: MImagePayload(
-                    height: 210,
-                    width: 210,
-                    borderRadius: 5,
-                  ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              WImage(
+                PDefaultValues.foodImage,
+                payload: MImagePayload(
+                  height: 210,
+                  width: double.infinity,
+                  borderRadius: 5,
                 ),
-              ],
-            ),
+              ),
+              Row(
+                children: [
+                  Icon(Icons.star, color: AppColors.warning, size: h3),
+                  Text(
+                    "${4.6} (${12} reviews)",
+                    style: interRegular.copyWith(fontSize: h2),
+                  ),
+                  Spacer(),
+                  Row(
+                    children: [
+                      WIcon(path: Assets.icons.box, color: AppColors.success),
+                      Text(
+                        "${33} item left",
+                        style: interSemiBold.copyWith(color: AppColors.success),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              Text(
+                "Red Color Short Dress For Grils, The Dress Only For Women",
+                style: interSemiBold.copyWith(
+                  color: AppColors.textPrimary(),
+                  fontSize: h3,
+                ),
+                overflow: TextOverflow.ellipsis,
+              ),
+              Text("\$3237.87", style: productPriceTextStyle),
+              Row(
+                children: [
+                  Text(
+                    "\$3500",
+                    style: discountPercentageTextStyle.copyWith(
+                      decoration: TextDecoration.lineThrough,
+                      decorationColor: AppColors.textDisabled(),
+                      color: AppColors.textDisabled(),
+                      decorationThickness: 2,
+                    ),
+                  ).pR(),
+                  WDiscount(label: "-5 %"),
+                  Spacer(),
+                  Container(
+                    height: 24,
+                    width: 24,
+                    decoration: BoxDecoration(
+                      color: AppColors.primary(),
+                      borderRadius: BorderRadius.circular(PTheme.borderRadius),
+                    ),
+                    child: Icon(Icons.add, color: Colors.white),
+                  ),
+                ],
+              ),
+            ],
           ).expd(value: 60),
         ],
       ).pAll(),

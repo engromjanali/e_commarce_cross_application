@@ -14,7 +14,9 @@ class WCard extends StatelessWidget {
         color: color ?? context.cardColor,
         borderRadius: BorderRadius.circular(PTheme.borderRadius),
       ),
-      child: child,
+      child: ClipRRect(
+          borderRadius: BorderRadius.circular(PTheme.borderRadius),
+          child: child),
     );
   }
 }

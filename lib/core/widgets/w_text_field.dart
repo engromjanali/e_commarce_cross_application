@@ -39,6 +39,7 @@ class WTextField extends StatefulWidget {
   final bool? expands;
   final AutovalidateMode? autovalidateMode;
   final TextAlignVertical? textAlignVertical;
+  final Color? fillColor;
   const WTextField({
     super.key,
     this.label,
@@ -61,6 +62,7 @@ class WTextField extends StatefulWidget {
     this.expands,
     this.autovalidateMode,
     this.textAlignVertical,
+    this.fillColor,
   }) : obsecureText = false,
        isRequired = false;
 
@@ -87,6 +89,7 @@ class WTextField extends StatefulWidget {
     this.expands,
     this.autovalidateMode,
     this.textAlignVertical,
+    this.fillColor,
   }) : obsecureText = true;
   const WTextField.requiredField({
     super.key,
@@ -110,6 +113,7 @@ class WTextField extends StatefulWidget {
     this.expands,
     this.autovalidateMode,
     this.textAlignVertical,
+    this.fillColor,
   }) : obsecureText = false,
        isRequired = true;
 
@@ -188,6 +192,7 @@ class _WTextFieldState extends State<WTextField> {
         }
         return null;
       },
+
       expands: widget.expands ?? false,
       obscureText: obsecureText.value,
       controller: _controller,
@@ -207,7 +212,7 @@ class _WTextFieldState extends State<WTextField> {
       ),
       decoration: InputDecoration(
         filled: true,
-        fillColor: context.fillColor,
+        fillColor: widget.fillColor ?? context.fillColor,
         prefixIconConstraints: BoxConstraints(maxHeight: 17),
         errorStyle: context.textTheme?.labelSmall?.copyWith(
           color: context.redColor,

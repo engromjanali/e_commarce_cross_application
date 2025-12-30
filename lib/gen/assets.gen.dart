@@ -49,6 +49,9 @@ class $AssetsIconsGen {
   /// Directory path: assets/icons/bottom_nav
   $AssetsIconsBottomNavGen get bottomNav => const $AssetsIconsBottomNavGen();
 
+  /// File path: assets/icons/box.svg
+  String get box => 'assets/icons/box.svg';
+
   /// File path: assets/icons/clear.svg
   String get clear => 'assets/icons/clear.svg';
 
@@ -111,6 +114,7 @@ class $AssetsIconsGen {
     explore,
     add,
     afterBefore,
+    box,
     clear,
     close2,
     close,

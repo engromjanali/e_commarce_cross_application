@@ -66,7 +66,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
                   path: icon,
                   height: isActive ? 16 : 24,
                   width: isActive ? 16 : 24,
-                  fit: BoxFit.fill,
+                  fit: BoxFit.contain,
                   color: isActive ? Colors.white : AppColors.textDisabled(),
                 ).pR(),
                 if (isActive)

@@ -77,8 +77,8 @@ class PColors {
   static final borderColorDark = Color(0xFF2B2B2B);
 
   // Divider Colors/
-  static final dividerColorLight = Color(0xFFFFFFFF);
-  static final dividerColorDark = Color(0xFF171717);
+  static final dividerColorLight = Color(0XFF595959);
+  static final dividerColorDark = Color(0XFF595959);
 
   // Text Colors
   static const primayTextColorLight = Color(0XFF1C1E20);
@@ -135,12 +135,6 @@ class AppColors {
 
   // 🔹 Background
   static Color background({BuildContext? buildContext}) {
-    if (Get.context!.theme.brightness == Brightness.dark) {
-      printer("Yes");
-    } else {
-      printer("No");
-    }
-
     return (buildContext ?? Get.context!).isDarkMode
         ? PColors.backGroundColorDark
         : PColors.backGroundColorLight;

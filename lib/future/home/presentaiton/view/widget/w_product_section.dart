@@ -1,9 +1,9 @@
-
 import 'package:e_commarce_site/core/constants/colors.dart';
 import 'package:e_commarce_site/core/constants/dimension_theme.dart';
 import 'package:e_commarce_site/core/constants/style.dart';
 import 'package:e_commarce_site/core/extensions/ex_expanded.dart';
 import 'package:e_commarce_site/core/extensions/ex_padding.dart';
+import 'package:e_commarce_site/future/home/presentaiton/view/explore/w_stores.dart';
 import 'package:e_commarce_site/future/home/presentaiton/view/s_home.dart';
 import 'package:e_commarce_site/future/home/presentaiton/view/widget/w_product.dart';
 import 'package:e_commarce_site/future/home/presentaiton/widget/w_offer_end_in_counter.dart';
@@ -15,11 +15,13 @@ class WProductSection extends StatelessWidget {
   final String lable;
   final bool isOneTDeal;
   final VoidCallback? onTap;
+  final bool isTopStores;
   const WProductSection({
     super.key,
     required this.lable,
     this.isOneTDeal = false,
     this.onTap,
+    this.isTopStores = false,
   });
 
   @override
@@ -73,16 +75,17 @@ class WProductSection extends StatelessWidget {
           ).pB(value: PTheme.paddingY),
 
           SizedBox(
-            height: 194,
-            child: ListView.separated(
+            height: isTopStores ? 150 : 194,
+            child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: 10,
-              separatorBuilder: (_, __) => const SizedBox(width: 12),
               itemBuilder: (_, index) {
-                return WProduct(
-                  isWished: index % 2 == 0,
-                  wishAction: (val) {},
-                ).pR();
+                return isTopStores
+                    ? WStores().pR()
+                    : WProduct(
+                        isWished: index % 2 == 0,
+                        wishAction: (val) {},
+                      ).pR();
               },
             ),
           ),

@@ -1,32 +1,52 @@
-
-import 'dart:ui';
-
 import 'package:e_commarce_site/core/constants/colors.dart';
 import 'package:e_commarce_site/core/constants/default_values.dart';
+import 'package:e_commarce_site/core/constants/dimension_theme.dart';
 import 'package:e_commarce_site/core/constants/style.dart';
 import 'package:e_commarce_site/core/extensions/ex_padding.dart';
+import 'package:e_commarce_site/core/helper/responsive_halper.dart';
 import 'package:e_commarce_site/core/widgets/image/m_image_payload.dart';
 import 'package:e_commarce_site/core/widgets/image/w_image.dart';
 import 'package:e_commarce_site/future/home/presentaiton/view/s_home.dart';
 import 'package:e_commarce_site/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
 
 class WProduct extends StatelessWidget {
+  final bool isGridProduct;
   bool isWished;
   final Function(bool)? wishAction;
-  WProduct({super.key, required this.isWished, this.wishAction});
+  WProduct({
+    super.key,
+    required this.isWished,
+    this.wishAction,
+    this.isGridProduct = false,
+  });
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 120,
+      width: isGridProduct ? double.infinity : 120,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           /// 🔹 Image + Wish Button
           SizedBox(
-            height: 120,
+            height: isGridProduct
+                ? (Get.size.width -
+                          (ResponsiveHelper.isMobile()
+                              ? 2
+                              : ResponsiveHelper.isTab(context)
+                              ? 4
+                              : 6) +
+                          1 * PTheme.spaceX) /
+                      (ResponsiveHelper.isMobile()
+                          ? 2
+                          : ResponsiveHelper.isTab(context)
+                          ? 4
+                          : 6)
+                : 120,
             child: StatefulBuilder(
               builder: (_, setLocalState) => Stack(
                 children: [
